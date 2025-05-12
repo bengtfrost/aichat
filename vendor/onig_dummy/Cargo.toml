@@ -1,0 +1,9 @@
+[package]
+name = "onig"
+version = "6.4.0"
+edition = "2018"
+publish = false
+
+[lib]
+path = "src/lib.rs"
+

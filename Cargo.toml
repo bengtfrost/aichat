@@ -10,6 +10,10 @@ repository = "https://github.com/sigoden/aichat"
 categories = ["command-line-utilities"]
 keywords = ["chatgpt", "llm", "cli", "ai", "repl"]
 
+[patch.crates-io]
+onig_sys = { path = "vendor/onig_sys_dummy" }
+onig     = { path = "vendor/onig_dummy" }
+
 [dependencies]
 anyhow = "1.0.69"
 bytes = "1.4.0"
@@ -73,9 +77,13 @@ features = ["json", "multipart", "socks", "rustls-tls", "rustls-tls-native-roots
 default-features = false
 
 [dependencies.syntect]
-version = "5.0.0"
-default-features = false
-features = ["parsing", "regex-onig", "plist-load"]
+version = "5.2.0"            # or match the version you’re using
+default-features = false     # disable “regex-onig”
+features = [
+  "parsing",                 # keep syntax parsing
+  "regex-fancy",             # pure-Rust fancy-regex backend
+  "plist-load",              # any other features you need
+]
 
 [target.'cfg(target_os = "macos")'.dependencies]
 crossterm = { version = "0.28.1", features = ["use-dev-tty"] }
