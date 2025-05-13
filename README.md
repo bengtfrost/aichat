@@ -1,3 +1,7 @@
+Okay, I've reformatted the `README.md`, incorporated Rust as a reference with icons, and ensured only the Apache 2.0 license is highlighted.
+
+Here's the updated Markdown content:
+
 ````markdown
 # 🦀 aichat (Pure Rust Fork) ⚡
 
