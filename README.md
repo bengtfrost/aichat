@@ -1,8 +1,3 @@
-Okay, I've reformatted the `README.md`, incorporated Rust as a reference with icons, and ensured only the Apache 2.0 license is highlighted.
-
-Here's the updated Markdown content:
-
-````markdown
 # 🦀 aichat (Pure Rust Fork) ⚡
 
 [![Made with Rust](https://img.shields.io/badge/Made%20with-Rust-EA592E?style=for-the-badge&logo=rust)](https://www.rust-lang.org)
@@ -48,8 +43,8 @@ tar -xzf aichat-vX.Y.Z-x86_64-unknown-linux-gnu.tar.gz
 chmod +x aichat
 sudo mv aichat /usr/local/bin/aichat
 ```
-````
 
+````
 ### 2. Install via Cargo (from Git)
 
 Ensure you have Rust and Cargo installed. Then:
@@ -159,3 +154,4 @@ limitations under the License.
 
 ```
 ```
+````
