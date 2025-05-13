@@ -1,4 +1,4 @@
-i# Contributing to `aichat` (Pure Rust Fork)
+# Contributing to `aichat` (Pure Rust Fork)
 
 🎉 Thank you for considering contributing to this pure Rust fork of `aichat`! 🎉
 
