@@ -1,107 +1,137 @@
+## README.md
 
+````markdown
 # aichat
 
-> ⚡ A Rust-native fork of [sigoden/aichat](https://github.com/sigoden/aichat), replacing the `onig_sys` C dependency with pure-Rust `fancy-regex` for safety, portability, and simplicity.
+> ⚡ A Rust-native fork of [sigoden/aichat](https://github.com/sigoden/aichat), built 100% in safe Rust and replacing `onig_sys` with pure-Rust `fancy-regex` for regex functionality.
 
-## ✨ Why this fork?
+**Highlights:**
 
-The original `aichat` is a fantastic CLI for LLM interactions, but it relies on `syntect` + `onig_sys`, which pulls in the Oniguruma C library. This fork eliminates all native C dependencies by using:
+- 🛡 **Safe & Portable:** Zero C dependencies—no `onig_sys`, only `fancy-regex`.
+- ⚙️ **Easy to Build:** Pure Cargo workflow; build with a single command on Linux, macOS, or Windows.
+- 🚀 **Feature-Complete:** Retains all AIChat features: shell assistant, chat-REPL, RAG, agents, streaming, and more.
 
-* ✅ `fancy-regex` — A Rust-native regex engine
-* ✅ Patch to `syntect` to replace `onig`
-* ✅ Clean and portable build using only Rust crates
+---
 
-This makes it:
+## 🚀 Why This Fork?
 
-* 🛡 Safer (memory-safe, no FFI)
-* 📦 Easier to compile (no external C toolchains needed)
-* 💻 Ideal for Linux, macOS, and WASM targets
+The upstream AIChat project relies on `syntect` + `onig_sys` (Oniguruma C library) for syntax highlighting. This fork:
+
+1. **Drops C FFI**: Replaces Oniguruma with the pure-Rust [`fancy-regex`](https://crates.io/crates/fancy-regex) engine.
+2. **Simplifies Builds**: No need for system C libraries or toolchains; just Rust.
+3. **Boosts Safety**: Leverages Rust’s memory safety guarantees.
+4. **Enhances Portability**: Works seamlessly on musl-based, Windows, WASM, and container environments.
 
 ---
 
 ## 📦 Installation
 
-### Option 1: Install Prebuilt Binary
+### 1. Prebuilt Binaries (Recommended)
 
-Download the latest binary from [Releases](https://github.com/bengtfrost/aichat/releases):
+Download the latest release from [GitHub Releases](https://github.com/bengtfrost/aichat/releases) for your platform, then:
 
 ```sh
-chmod +x aichat-linux-x86_64
-./aichat
+chmod +x aichat-<platform>
+sudo mv aichat-<platform> /usr/local/bin/aichat
+```
+````
+
+### 2. Install via Cargo (Git)
+
+```sh
+cargo install --git https://github.com/bengtfrost/aichat --branch main
 ```
 
-### Option 2: Install via Cargo from Git
+### 3. Build from Source
 
 ```sh
-cargo install --git https://github.com/bengtfrost/aichat
-```
-
-### Option 3: Build from Source
-
-```sh
-git clone https://github.com/bengtfrost/aichat
+git clone https://github.com/bengtfrost/aichat.git
 cd aichat
 cargo install --path .
 ```
 
 ---
 
-## 🛠 Building & Development
+## 🛠 Project Structure
 
-To contribute, you need:
-
-* Rust toolchain (>= 1.70)
-* `cargo` CLI
-* Optional: `gh` for GitHub releases
-
-### Patch Setup
-
-We patch `syntect` to remove the `onig` dependency:
-
-```toml
-[patch.crates-io]
-syntect = { path = "vendor/syntect" }
 ```
-
-See [`docs/building.md`](docs/building.md) for full details.
-
----
-
-## 🧪 Testing
-
-To verify everything works:
-
-```sh
-cargo check
-cargo test
+/aichat
+├── Cargo.toml         # project manifest (0.29.0-native)
+├── src/               # Rust source code
+├── vendor/            # patched crates (onig_sys_dummy, onig_dummy)
+├── docs/              # build, release, contributing guides
+│   ├── BUILD.md
+│   ├── RELEASE.md
+│   └── CONTRIBUTING.md
+├── README.md
+├── LICENSE-APACHE
+├── LICENSE-MIT
+├── .gitignore         # ignores target/, binaries, Cargo.lock
+└── target/            # build artifacts (not committed)
 ```
 
 ---
 
-## 📤 Release Process
+## 🛠 Getting Started & Development
 
-1. Build release binary:
-
-   ```sh
-   cargo build --release
-   ```
-
-2. Upload to GitHub Releases:
-
-   ```sh
-   gh release create v0.29.1 target/release/aichat --title "aichat v0.29.1" --notes "Rust-native build with fancy-regex"
-   ```
-
-See [`docs/release-process.md`](docs/release-process.md).
+See [docs/BUILD.md](docs/BUILD.md) for detailed build instructions, and [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) for contribution guidelines.
 
 ---
 
-## 🙌 Credits
+## 📤 Release & Distribution
 
-Original project by [sigoden](https://github.com/sigoden/aichat). Fork and rewrite by [bengtfrost](https://github.com/bengtfrost).
+Follow the process in [docs/RELEASE.md](docs/RELEASE.md) to bump versions, tag releases, and upload binaries.
 
 ---
 
-## 📄 License
+## 🙌 Credits & License
 
-Apache-2.0
+- Original: [sigoden/aichat](https://github.com/sigoden/aichat)
+- Fork & Maintenance: [bengtfrost/aichat](https://github.com/bengtfrost/aichat)
+- License: MIT OR Apache-2.0
+
+````
+---
+
+## docs/BUILD.md
+```markdown
+# Building aichat from Source
+
+## Prerequisites
+- Rust & Cargo (stable, >=1.70): `rustup` recommended
+- Git 2.x
+
+## Steps
+
+1. **Clone**:
+   ```bash
+git clone https://github.com/bengtfrost/aichat.git
+cd aichat
+````
+
+2. **Build**:
+
+   ```bash
+   ```
+
+cargo build --release
+
+````
+3. **Run**:
+   ```bash
+./target/release/aichat
+````
+
+4. **Install locally** (optional):
+
+   ```bash
+   ```
+
+cargo install --path .
+
+```
+## Notes
+- No C toolchain or system libraries required.
+- Uses `fancy-regex` instead of `onig_sys` for regex support.
+```
+

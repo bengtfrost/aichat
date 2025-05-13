@@ -1,30 +1,35 @@
-
----
-
-### 3. `docs/CONTRIBUTING.md`
-
-This file will provide clear instructions on how **contributors** can contribute to the project.
+## docs/CONTRIBUTING.md
 
 ```markdown
 # Contributing to aichat
 
-Thank you for considering contributing to `aichat`! This guide will help you get started with contributing to the project.
+## 🚀 Setup
+```bash
+...
+```markdown
+# Contributing to aichat
 
-## Ways to Contribute
+## Setup
+```bash
+git clone https://github.com/bengtfrost/aichat.git
+cd aichat
+cargo build
+``` 
 
-There are many ways you can contribute to this project:
+## Workflow
+1. Create branch: `git checkout -b feature/your-feature`
+2. Implement changes, then: `cargo fmt && cargo clippy && cargo test`
+3. Commit: `git commit -m "feat: description of change"`
+4. Push: `git push -u origin feature/your-feature`
+5. Open PR via GitHub CLI: `gh pr create` 
 
-- **Reporting Bugs**: If you find a bug, please open an issue on GitHub with steps to reproduce.
-- **Feature Requests**: If you have an idea for a new feature, feel free to open an issue with a description of the feature and why it would be useful.
-- **Pull Requests**: If you want to add a new feature or fix a bug, please fork the repository, make your changes, and create a pull request.
+## Guidelines
+- Follow Rust style conventions
+- Write descriptive commit messages
+- Sync with upstream before merging: `git fetch upstream && git rebase upstream/main`
+- Add tests for new functionality
 
-## Setting Up Your Development Environment
-
-1. **Clone the Repository**:
-
-   Clone the project to your local machine:
-
-   ```bash
-   git clone https://github.com/bengtfrost/aichat.git
-   cd aichat
+## Code of Conduct
+Please follow our [Code of Conduct](https://www.rust-lang.org/policies/code-of-conduct).
+````
 
