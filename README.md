@@ -1,4 +1,3 @@
-````markdown
 # 🦀 aichat
 
 [![Made with Rust](https://img.shields.io/badge/Made%20with-Rust-EA592E?style=for-the-badge&logo=rust)](https://www.rust-lang.org)
@@ -45,8 +44,8 @@ tar -xzf aichat-<version>-<platform-triple>.tar.gz
 chmod +x aichat
 sudo mv aichat /usr/local/bin/aichat
 ```
-````
 
+````
 ### 2. Install via Cargo (from Git)
 
 Ensure you have the Rust toolchain installed. Then:
@@ -63,27 +62,6 @@ cd aichat
 cargo install --path .
 # The binary will be located at target/release/aichat or typically in ~/.cargo/bin/
 ```
-
----
-
-## 🦀 Powered by Rust
-
-This project is proudly built using the [**Rust programming language**](https://www.rust-lang.org/).
-
-<p align="center">
-  <a href="https://www.rust-lang.org" target="_blank" rel="noopener noreferrer">
-    <img src="https://www.rust-lang.org/static/images/rust-logo-blk.svg" alt="Rust Logo" width="120" />
-  </a>
-</p>
-
-Rust's focus on safety, speed, and concurrency makes it an ideal choice for developing robust and high-performance command-line applications like `aichat`. By leveraging Rust:
-
-- **Memory Safety:** Compile-time checks prevent common bugs like null pointer dereferences and data races, without a garbage collector.
-- **Performance:** Rust provides C-like performance with high-level ergonomics.
-- **Modern Tooling:** `cargo`, Rust's build system and package manager, simplifies dependency management and the build process.
-- **Rich Ecosystem:** A vibrant ecosystem of "crates" (libraries) like `fancy-regex` enables building complex applications with pure-Rust components.
-
-This fork's commitment to 100% safe Rust further amplifies these benefits.
 
 ---
 
@@ -137,6 +115,4 @@ A copy of the license can be found in the [LICENSE-APACHE](LICENSE-APACHE) file 
 - **This Fork & Maintenance:** [bengtfrost/aichat](https://github.com/bengtfrost/aichat) by **[@bengtfrost](https://github.com/bengtfrost)**.
 - **Core Regex Engine:** The [`fancy-regex`](https://crates.io/crates/fancy-regex) crate and its contributors, for providing a robust pure-Rust regex solution.
 - **The Rust Community:** For creating and maintaining such a powerful and productive language and ecosystem.
-
-```
-```
+````
