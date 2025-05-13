@@ -66,6 +66,7 @@ cargo install --path .
 
 ## 📂 Project Structure
 
+```text
 /aichat
 ├── Cargo.toml # Project manifest (e.g., version 0.29.0-native)
 ├── src/ # Rust source code (100% safe Rust)
@@ -78,6 +79,7 @@ cargo install --path .
 ├── LICENSE-APACHE # Apache 2.0 License text
 ├── .gitignore # Specifies intentionally untracked files
 └── target/ # Build artifacts (not committed to version control)
+```
 
 ---
 
