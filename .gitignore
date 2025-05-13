@@ -18,3 +18,9 @@ aichat
 
 # GitHub Actions cache
 .github/workflows/*.bak
+
+# Secret files for docker
+.container/.env
+
+.cache_ggshield
+.env
