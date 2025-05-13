@@ -45,7 +45,6 @@ chmod +x aichat
 sudo mv aichat /usr/local/bin/aichat
 ```
 
-````
 ### 2. Install via Cargo (from Git)
 
 Ensure you have the Rust toolchain installed. Then:
@@ -67,20 +66,18 @@ cargo install --path .
 
 ## 📂 Project Structure
 
-```text
 /aichat
-├── Cargo.toml         # Project manifest (e.g., version 0.29.0-native)
-├── src/               # Rust source code (100% safe Rust)
-├── vendor/            # Patched crates (e.g., onig_sys_dummy, onig_dummy)
-├── docs/              # Documentation: build, release, contributing guides
-│   ├── BUILD.md       # Detailed build instructions
-│   ├── RELEASE.md     # Release process guide
-│   └── CONTRIBUTING.md# Contribution guidelines
-├── README.md          # This file
-├── LICENSE-APACHE     # Apache 2.0 License text
-├── .gitignore         # Specifies intentionally untracked files
-└── target/            # Build artifacts (not committed to version control)
-```
+├── Cargo.toml # Project manifest (e.g., version 0.29.0-native)
+├── src/ # Rust source code (100% safe Rust)
+├── vendor/ # Patched crates (e.g., onig_sys_dummy, onig_dummy)
+├── docs/ # Documentation: build, release, contributing guides
+│ ├── BUILD.md # Detailed build instructions
+│ ├── RELEASE.md # Release process guide
+│ └── CONTRIBUTING.md# Contribution guidelines
+├── README.md # This file
+├── LICENSE-APACHE # Apache 2.0 License text
+├── .gitignore # Specifies intentionally untracked files
+└── target/ # Build artifacts (not committed to version control)
 
 ---
 
@@ -115,4 +112,3 @@ A copy of the license can be found in the [LICENSE-APACHE](LICENSE-APACHE) file 
 - **This Fork & Maintenance:** [bengtfrost/aichat](https://github.com/bengtfrost/aichat) by **[@bengtfrost](https://github.com/bengtfrost)**.
 - **Core Regex Engine:** The [`fancy-regex`](https://crates.io/crates/fancy-regex) crate and its contributors, for providing a robust pure-Rust regex solution.
 - **The Rust Community:** For creating and maintaining such a powerful and productive language and ecosystem.
-````
