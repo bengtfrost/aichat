@@ -104,4 +104,4 @@ Original project by [sigoden](https://github.com/sigoden/aichat). Fork and rewri
 
 ## 📄 License
 
-MIT OR Apache-2.0
+Apache-2.0
