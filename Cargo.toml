@@ -10,7 +10,7 @@ homepage = "https://github.com/bengtfrost/aichat"
 keywords = ["chatgpt", "terminal", "cli", "rust", "openai"]
 categories = ["command-line-utilities"]
 authors = ["Bengt Frost <bengtfrost@outlook.com>"]
-build = "build.rs"
+# build = "build.rs"
 
 [patch.crates-io]
 onig_sys = { path = "vendor/onig_sys_dummy" }
