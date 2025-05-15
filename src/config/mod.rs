@@ -2416,7 +2416,8 @@ pub fn load_env_file() -> Result<()> {
             continue;
         }
         if let Some((key, value)) = line.split_once('=') {
-            env::set_var(key.trim(), value.trim());
+            // TODO: Audit that the environment access only happens in single-threaded code.
+            unsafe { env::set_var(key.trim(), value.trim()) };
         }
     }
     Ok(())

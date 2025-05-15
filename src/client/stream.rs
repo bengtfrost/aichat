@@ -257,7 +257,7 @@ mod tests {
     }
 
     macro_rules! assert_json_stream {
-        ($input:expr, $output:expr) => {
+        ($input:expr_2021, $output:expr_2021) => {
             let chunks: Vec<_> = split_chunks($input)
                 .into_iter()
                 .map(|chunk| Ok::<_, std::convert::Infallible>(Bytes::from(chunk)))
