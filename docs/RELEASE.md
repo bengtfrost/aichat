@@ -4,17 +4,17 @@ This document outlines the steps to create a new release for the `aichat` projec
 
 ## Prerequisites
 
--   Ensure your local `main` branch is up-to-date with the remote repository.
-    ```bash
-    git checkout main
-    git pull origin main
-    ```
--   Ensure all tests pass and the project is in a stable state.
--   You have the [GitHub CLI (`gh`)](https://cli.github.com/) installed and authenticated for creating releases.
--   You have `cargo-edit` installed for `cargo set-version`. If not, you can install it via:
-    ```bash
-    cargo install cargo-edit
-    ```
+- Ensure your local `main` branch is up-to-date with the remote repository.
+  ```bash
+  git checkout main
+  git pull origin main
+  ```
+- Ensure all tests pass and the project is in a stable state.
+- You have the [GitHub CLI (`gh`)](https://cli.github.com/) installed and authenticated for creating releases.
+- You have `cargo-edit` installed for `cargo set-version`. If not, you can install it via:
+  ```bash
+  cargo install cargo-edit
+  ```
 
 ## Release Steps
 
@@ -22,7 +22,7 @@ Follow these steps in order to publish a new version:
 
 ### 1. Update Version Number
 
-Update the version in `Cargo.toml` using `cargo-set-version`. Replace `<new-version>` with the desired semantic version (e.g., `0.30.0` or `0.29.1-native`).
+Update the version in `Cargo.toml` using `cargo-set-version`. Replace `<new-version>` with the desired semantic version (e.g., `0.30.0` or `029.2-native`).
 
 ```bash
 # Example: cargo set-version 0.30.0
@@ -62,3 +62,4 @@ gh release create v<new-version> \
   # aichat-v<new-version>-<other-platform>-<arch>#"aichat v<new-version> (<other-platform>-<arch> binary)" \
   --title "aichat v<new-version>" \
   --notes "Pure-Rust build replacing onig_sys with fancy-regex. Add detailed release notes here, describing changes, new features, and bug fixes since the last release. You can also link to the changelog if available."
+```
