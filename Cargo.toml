@@ -1,6 +1,6 @@
 [package]
 name = "aichat"
-version = "0.29.1-native"
+version = "0.29.2-native"
 edition = "2024"
 description = "ChatGPT in your terminal — Rust-native build using fancy-regex instead of onig_sys"
 license = "Apache-2.0"
@@ -14,7 +14,7 @@ authors = ["Bengt Frost <bengtfrost@outlook.com>"]
 
 [patch.crates-io]
 onig_sys = { path = "vendor/onig_sys_dummy" }
-onig     = { path = "vendor/onig_dummy" }
+onig = { path = "vendor/onig_dummy" }
 
 [dependencies]
 anyhow = "1.0.69"
@@ -28,9 +28,17 @@ reedline = "0.39.0"
 serde = { version = "1.0.152", features = ["derive"] }
 serde_json = { version = "1.0.93", features = ["preserve_order"] }
 serde_yaml = "0.9.17"
-tokio = { version = "1.34.0", features = ["rt", "time", "macros", "signal", "rt-multi-thread"] }
+tokio = { version = "1.34.0", features = [
+  "rt",
+  "time",
+  "macros",
+  "signal",
+  "rt-multi-thread",
+] }
 tokio-graceful = "0.2.2"
-tokio-stream = { version = "0.1.15", default-features = false, features = ["sync"] }
+tokio-stream = { version = "0.1.15", default-features = false, features = [
+  "sync",
+] }
 crossterm = "0.28.1"
 chrono = "0.4.23"
 bincode = "1.3.3"
@@ -64,7 +72,9 @@ path-absolutize = "3.1.1"
 hnsw_rs = "0.3.0"
 rayon = "1.10.0"
 uuid = { version = "1.9.1", features = ["v4"] }
-scraper = { version = "0.23.1", default-features = false, features = ["deterministic"] }
+scraper = { version = "0.23.1", default-features = false, features = [
+  "deterministic",
+] }
 sys-locale = "0.3.1"
 html_to_markdown = "0.1.0"
 rust-embed = "8.5.0"
@@ -75,23 +85,31 @@ fuzzy-matcher = "0.3.7"
 
 [dependencies.reqwest]
 version = "0.12.0"
-features = ["json", "multipart", "socks", "rustls-tls", "rustls-tls-native-roots"]
+features = [
+  "json",
+  "multipart",
+  "socks",
+  "rustls-tls",
+  "rustls-tls-native-roots",
+]
 default-features = false
 
 [dependencies.syntect]
-version = "5.2.0"            # or match the version you’re using
-default-features = false     # disable “regex-onig”
+version = "5.2.0" # or match the version you’re using
+default-features = false # disable “regex-onig”
 features = [
-  "parsing",                 # keep syntax parsing
-  "regex-fancy",             # pure-Rust fancy-regex backend
-  "plist-load",              # any other features you need
+  "parsing",     # keep syntax parsing
+  "regex-fancy", # pure-Rust fancy-regex backend
+  "plist-load",  # any other features you need
 ]
 
 [target.'cfg(target_os = "macos")'.dependencies]
 crossterm = { version = "0.28.1", features = ["use-dev-tty"] }
 
 [target.'cfg(target_os = "linux")'.dependencies]
-arboard = { version = "3.3.0", default-features = false, features = ["wayland-data-control"] }
+arboard = { version = "3.3.0", default-features = false, features = [
+  "wayland-data-control",
+] }
 
 [target.'cfg(not(any(target_os = "linux", target_os = "android", target_os = "emscripten")))'.dependencies]
 arboard = { version = "3.3.0", default-features = false }
