@@ -1,7 +1,7 @@
 [package]
 name = "aichat"
 # Suggestion: Update version to reflect it's a fork of the 0.30.0 release
-version = "0.30.1-native"
+version = "0.30.2-native"
 edition = "2024"
 description = "ChatGPT in your terminal — Rust-native build using fancy-regex instead of onig_sys"
 license = "Apache-2.0"
